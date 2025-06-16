@@ -25,17 +25,12 @@ public class Exer7 {
         input.close();
 
         // Processamento e Output
-        generateStarWarsName(nomeUsuario, sobrenomeUsuario, cidadeUsuario, sobrenomeMae);
+        System.out.println(generateStarWarsName(nomeUsuario, sobrenomeUsuario, cidadeUsuario, sobrenomeMae));
     }
 
-    public static void generateStarWarsName(String nome, String sobrenome, String cidade, String sobrenomeMae) {
-        System.out.println("Seu nome completo na série Star Wars:");
+    public static String generateStarWarsName(String nome, String sobrenome, String cidade, String sobrenomeMae) {
+        System.out.println("\nSeu nome completo na série Star Wars:");
 
-        sobrenome.substring(0, 3);
-        nome.substring(0, 2);
-
-        sobrenomeMae.substring(0, 2);
-        cidade.substring(0, 3);
-
+        return sobrenome.substring(0, 3) + nome.substring(0, 2) + sobrenomeMae.substring(0, 2) + cidade.substring(0, 3);
     }
 }

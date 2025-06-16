@@ -29,7 +29,7 @@ public class Exer4 {
     public static void imprimirMaiorElemento(int[] vetor) {
 
         // Procura maior número vetor
-        int maior = vetor[0];
+        int maior = Integer.MIN_VALUE;
         for (int i : vetor) {
             if (i > maior) {
                 maior = i;
@@ -43,7 +43,7 @@ public class Exer4 {
     public static void imprimirMenorElemento(int[] vetor) {
 
         // Procura menor número vetor
-        int menor = vetor[0];
+        int menor = Integer.MAX_VALUE;
         for (int i : vetor) {
             if (i < menor) {
                 menor = i;
@@ -57,13 +57,15 @@ public class Exer4 {
     public static void imprimirMediaValores(int[] vetor) {
 
         // Faz a média do vetor
-        int soma = 0;
+        double soma = 0;
         for (int i : vetor) {
             soma += i;
         }
 
+        double media = soma / vetor.length;
+
         // Output
-        System.out.println("A média dos valores do vetor é: " + (soma / vetor.length));
+        System.out.println("A média dos valores do vetor é: " + media);
     }
 }
 
