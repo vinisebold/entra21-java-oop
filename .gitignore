@@ -1,0 +1,5 @@
+# Diretório de saída (builds, etc.)
+/out/
+
+# Configurações do IntelliJ IDEA
+.idea/
