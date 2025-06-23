@@ -1,4 +1,4 @@
-# Entra21 - Java Orientado a Objetos
+# Entra21 - Java Orientado a Objetos (OOP)
 
 Este repositório reúne os materiais de estudo e os exercícios práticos sobre Programação Orientada a Objetos (POO) - Java
 
