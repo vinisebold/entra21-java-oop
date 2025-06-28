@@ -1,5 +1,7 @@
 package exer_6;
 
+import java.util.Arrays;
+
 public class Mercado {
     String[] nomeMercado;
     int[] macasVendidas;
@@ -7,35 +9,39 @@ public class Mercado {
     int[] laranjaVendidas;
     double[] laranjaPrecos;
 
-    public double maiorReceitaMaca() {
+    public double[] maiorReceitaMaca() {
 
         double[] receitaTotal = new double[nomeMercado.length];
         double maior = Double.MIN_VALUE;
+        int indice = 0;
 
         for (int i = 0; i < nomeMercado.length; i++) {
             receitaTotal[i] = macasVendidas[i] * macasPrecos[i];
             if (receitaTotal[i] > maior) {
                 maior = receitaTotal[i];
+                indice = i;
             }
         }
 
-        return maior;
+        return new double[]{indice, maior};
     }
 
-    public double maiorReceitaLaranja() {
+    public double[] maiorReceitaLaranja() {
 
         double[] receitaTotal = new double[nomeMercado.length];
         double maior = Double.MIN_VALUE;
+        int indice = 0;
 
         for (int i = 0; i < nomeMercado.length; i++) {
             receitaTotal[i] = laranjaVendidas[i] * laranjaPrecos[i];
             if (receitaTotal[i] > maior) {
                 maior = receitaTotal[i];
+                indice = i;
             }
         }
 
 
-        return maior;
+        return new double[]{indice, maior};
     }
 
     public int maiorReceitaTotal() {
@@ -58,7 +64,7 @@ public class Mercado {
     public int menorReceitaTotal() {
 
         double[] receitaTotal = new double[nomeMercado.length];
-        double menor = Double.MIN_VALUE;
+        double menor = Double.MAX_VALUE;
         int indice = 0;
 
         for (int i = 0; i < nomeMercado.length; i++) {
@@ -75,12 +81,12 @@ public class Mercado {
     public int verificarLojaMeio() {
 
         double[] receitaTotal = new double[nomeMercado.length];
-        double[] receitaOrdenada = receitaTotal;
-        int indice = nomeMercado.length / 2;
 
         for (int i = 0; i < nomeMercado.length; i++) {
             receitaTotal[i] = (laranjaVendidas[i] * laranjaPrecos[i]) + (macasVendidas[i] * macasPrecos[i]);
         }
+
+        double[] receitaOrdenada = Arrays.copyOf(receitaTotal, receitaTotal.length);
 
         double aux = 0;
         for (int i = 0; i < nomeMercado.length; i++) {
@@ -94,10 +100,9 @@ public class Mercado {
         }
 
         for (int i = 0; i < nomeMercado.length; i++) {
-            System.out.println(receitaOrdenada[i]);
-        }
-        for (int i = 0; i < nomeMercado.length; i++) {
-            System.out.println(receitaTotal[i]);
+            if (receitaOrdenada[1] == receitaTotal[i]) {
+                return i;
+            }
         }
 
         return 0;
@@ -116,7 +121,7 @@ public class Mercado {
         if (totalMacas > totalLaranjas) {
             return "Maças";
         } else {
-            return "Laranja";
+            return "Laranjas";
         }
     }
 
