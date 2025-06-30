@@ -2,21 +2,20 @@ package exer_5;
 
 public class Empregado {
 
-    int indentificacao;
+    String indentificacao;
     String nome;
     String sobreNome;
     double salario;
 
-    public double verificarSalarioAnual(){
+    public double mostrarSalarioAnual() {
         return salario * 12;
     }
 
-    public String verificarNomeCompleto(){
-        return nome + sobreNome;
+    public String mostrarNomeCompleto() {
+        return nome + " " + sobreNome;
     }
 
-    public void setSalario(double pPercentual){
-        salario = salario * pPercentual;
+    public void setSalario(double pPercentual) {
+        salario = salario + (salario * (pPercentual / 100));
     }
-
 }

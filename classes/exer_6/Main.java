@@ -28,7 +28,5 @@ public class Main {
 
         System.out.println("Juntando as 3 lojas a franquia teve uma receita maior vendendo oque? " + mercados.verificarProdutoMaisVendido());
 
-
-
     }
 }
