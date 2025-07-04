@@ -13,17 +13,21 @@ public class Contribuinte {
         this.rendaAnual = rendaAnual;
     }
 
-    public double verificarAliquota() {
+    private double verificarAliquota() {
         if (rendaAnual < 4000) {
             return 0;
-        } else if (rendaAnual > 4001 && rendaAnual < 9000) {
-            return 5.8;
-        } else if (rendaAnual > 9001 && rendaAnual < 25000) {
-            return 15;
-        } else if (rendaAnual > 25001 && rendaAnual < 35000) {
-            return 27.5;
-        } else {
-            return 30;
+        } else if (rendaAnual < 9000) {
+            return 0.058;
+        } else if (rendaAnual < 25000) {
+            return 0.15;
+        } else if (rendaAnual < 35000) {
+            return 0.275;
         }
+
+        return 0.30;
+    }
+
+    public double calcularImpostoPagar() {
+        return rendaAnual * verificarAliquota();
     }
 }

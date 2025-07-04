@@ -2,6 +2,7 @@ package exer_7;
 
 public class Main {
     public static void main(String[] args) {
+
         Aeronave[] aeronaves = new Aeronave[4];
 
         aeronaves[0] = new Aeronave("F-4 Phantom II", 4, 2370, 150);
@@ -24,6 +25,7 @@ public class Main {
                 indice = i;
             }
         }
+
         return indice;
     }
 
@@ -36,6 +38,7 @@ public class Main {
                 indice = i;
             }
         }
+
         return indice;
     }
 

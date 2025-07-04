@@ -2,31 +2,85 @@ package exer_6;
 
 public class Main {
     public static void main(String[] args) {
-        // Cria objeto
-        Mercado mercados = new Mercado();
-        mercados.nomeMercado = new String[]{"Fort Atacadista", "Sam's Club", "Supermercado do Zé"};
-        mercados.macasVendidas = new int[]{400, 250, 180};
-        mercados.macasPrecos = new double[]{2, 1.8, 2};
-        mercados.laranjaVendidas = new int[]{300, 215, 405};
-        mercados.laranjaPrecos = new double[]{2, 2, 2};
 
-        // Output
-        double[] maiorReceita = mercados.maiorReceitaMaca();
-        int idxNome = (int) maiorReceita[0];
-        System.out.println("Quem teve maior receita vendendo maçãs? " + mercados.nomeMercado[idxNome] + " - " + maiorReceita[1]);
+        Mercado unidadeDeBlumenau = new Mercado();
+        unidadeDeBlumenau.nome = "Giassi";
+        unidadeDeBlumenau.qtdMacasVendidas = 2000;
+        unidadeDeBlumenau.precoMacas = 1.5;
+        unidadeDeBlumenau.qtdLaranjasVendidas = 150;
+        unidadeDeBlumenau.precoLaranjas = 2;
 
-        maiorReceita = mercados.maiorReceitaLaranja();
-        idxNome = (int) maiorReceita[0];
+        Mercado unidadeDeJoinville = new Mercado();
+        unidadeDeJoinville.nome = "Angeloni";
+        unidadeDeJoinville.qtdMacasVendidas = 250;
+        unidadeDeJoinville.precoMacas = 1.7;
+        unidadeDeJoinville.qtdLaranjasVendidas = 12;
+        unidadeDeJoinville.precoLaranjas = 1.8;
 
-        System.out.println("Quem teve maior receita vendendo laranjas? " + mercados.nomeMercado[idxNome] + " - " + maiorReceita[1]);
+        Mercado unidadeDeFlorianopolis = new Mercado();
+        unidadeDeFlorianopolis.nome = "Bistek";
+        unidadeDeFlorianopolis.qtdMacasVendidas = 300000;
+        unidadeDeFlorianopolis.precoMacas = 1.4;
+        unidadeDeFlorianopolis.qtdLaranjasVendidas = 1780000;
+        unidadeDeFlorianopolis.precoLaranjas = 1.51;
 
-        System.out.println("Qual loja teve a maior receita? " + mercados.nomeMercado[mercados.maiorReceitaTotal()]);
+        Mercado[] vetor = {unidadeDeBlumenau, unidadeDeFlorianopolis, unidadeDeJoinville};
 
-        System.out.println("Qual loja teve a menor receita? " + mercados.nomeMercado[mercados.menorReceitaTotal()]);
+        // Quem teve a maior receita vendendo macas
+        double maiorReceitaMacas = Double.MIN_VALUE;
+        Mercado mercadoMaiorReceitaMacas = null;
+        for (int i = 0; i < vetor.length; i++) {
+            if (vetor[i].calcularReceitaMacas() > maiorReceitaMacas) {
+                maiorReceitaMacas = vetor[i].calcularReceitaMacas();
+                mercadoMaiorReceitaMacas = vetor[i];
+            }
+        }
 
-        System.out.println("Qual loja ficou no \"meio\" em termos de receita? " + mercados.nomeMercado[mercados.verificarLojaMeio()]);
+        System.out.println("O mercado que mais teve receita com a venda de maçãs foi: " + mercadoMaiorReceitaMacas.nome);
 
-        System.out.println("Juntando as 3 lojas a franquia teve uma receita maior vendendo oque? " + mercados.verificarProdutoMaisVendido());
+        // Quem teve a maior receita vendendo laranjas
+        double maiorReceitaLaranjas = Double.MIN_VALUE;
+        Mercado mercadoMaiorReceitaLaranjas = null;
+        for (int i = 0; i < vetor.length; i++) {
+            if (vetor[i].calcularReceitaLaranjas() > maiorReceitaLaranjas) {
+                maiorReceitaLaranjas = vetor[i].calcularReceitaLaranjas();
+                mercadoMaiorReceitaLaranjas = vetor[i];
+            }
+        }
+
+        System.out.println("Receita laranjas: " + mercadoMaiorReceitaLaranjas.nome);
+
+        // Quem teve a maior receita
+        double maiorReceitaTotal = Double.MIN_VALUE;
+        Mercado mercadoMaiorReceitaTotal = null;
+        for (int i = 0; i < vetor.length; i++) {
+            if (vetor[i].calcularReceitaTotal() > maiorReceitaTotal) {
+                maiorReceitaTotal = vetor[i].calcularReceitaTotal();
+                mercadoMaiorReceitaTotal = vetor[i];
+            }
+        }
+
+        System.out.println("Maior receita total: " + mercadoMaiorReceitaTotal.nome);
+
+        // Qual das lojas teve a segunda maior receita total
+        double maiorValorTotal = Double.MIN_VALUE;
+        for (int i = 0; i < vetor.length; i++) {
+            if (vetor[i].calcularReceitaTotal() > maiorValorTotal) {
+                maiorValorTotal = vetor[i].calcularReceitaTotal();
+            }
+        }
+
+        double segundoMaiorValor = Double.MIN_VALUE;
+        Mercado mercadoSegundoMaior = null;
+        for (int i = 0; i < vetor.length; i++) {
+            if (vetor[i].calcularReceitaTotal() > segundoMaiorValor && vetor[i].calcularReceitaTotal() != maiorValorTotal) {
+                segundoMaiorValor = vetor[i].calcularReceitaTotal();
+                mercadoSegundoMaior = vetor[i];
+            }
+        }
+
+        System.out.println("Segundo maior: " + mercadoSegundoMaior.nome);
 
     }
 }
+
