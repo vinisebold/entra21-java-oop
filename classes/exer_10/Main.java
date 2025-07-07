@@ -6,7 +6,16 @@ public class Main {
         OnibusEscolar onibus1 = new OnibusEscolar(19, 31);
 
         System.out.println(onibus1);
-        System.out.println(onibus1.getAlunos());
+
+        onibus1.setEstudantes(50);
+        System.out.println(onibus1);
+
+        onibus1.setProfessores(0);
+        onibus1.setEstudantes(30);
+        System.out.println(onibus1);
+
+        onibus1.removerAlunos(5);
+        System.out.println(onibus1);
 
     }
 }

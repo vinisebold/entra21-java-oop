@@ -21,25 +21,21 @@ public class Carro {
     }
 
     public void acelerar(int velocidade) {
-        if (velocidade >= 0 && velocidade < 20) {
-            setVelocidade(getVelocidade() + velocidade);
-        } else {
+        if (velocidade < 0 || velocidade > 20) {
             throw new IllegalArgumentException("Valor fora do padrão");
         }
+        setVelocidade(getVelocidade() + velocidade);
     }
 
     public void reduzir(int velocidade) {
-        if (velocidade >= 0 && velocidade < 30) {
-            setVelocidade(getVelocidade() - velocidade);
-        } else {
+        if (velocidade < 0 || velocidade > 30) {
             throw new IllegalArgumentException("Valor fora do padrão");
         }
+        setVelocidade(getVelocidade() - velocidade);
     }
 
     @Override
     public String toString() {
-        return "Carro{" +
-                "velocidade=" + velocidade +
-                '}';
+        return "Carro{" + "velocidade=" + velocidade + '}';
     }
 }

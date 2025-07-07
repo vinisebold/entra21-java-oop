@@ -7,10 +7,43 @@ public class Contribuinte {
     double rendaAnual;
 
     public Contribuinte(String nome, String cpf, String uf, double rendaAnual) {
-        this.nome = nome;
-        this.cpf = cpf;
-        this.uf = uf;
-        this.rendaAnual = rendaAnual;
+        setNome(nome);
+        setCpf(cpf);
+        setUf(uf);
+        setRendaAnual(rendaAnual);
+    }
+
+    public void setNome(String nome) {
+        if (nome == null || nome.isBlank()) {
+            System.err.println("Nome inválido");
+        } else {
+            this.nome = nome;
+        }
+    }
+
+    public void setCpf(String cpf) {
+        if (cpf == null || cpf.length() != 11) {
+            System.err.println("CPF inválido");
+        } else {
+            this.cpf = cpf;
+        }
+
+    }
+
+    public void setUf(String uf) {
+        if (uf == null || uf.isBlank() || uf.length() != 2) {
+            System.err.println("UF inválida");
+        } else {
+            this.uf = uf;
+        }
+    }
+
+    public void setRendaAnual(double rendaAnual) {
+        if (rendaAnual < 0) {
+            System.out.println("Renda anual inválida");
+        } else {
+            this.rendaAnual = rendaAnual;
+        }
     }
 
     private double verificarAliquota() {
@@ -23,11 +56,10 @@ public class Contribuinte {
         } else if (rendaAnual < 35000) {
             return 0.275;
         }
-
         return 0.30;
     }
 
-    public double calcularImpostoPagar() {
+    public double calcularImpostoDeRenda() {
         return rendaAnual * verificarAliquota();
     }
 }

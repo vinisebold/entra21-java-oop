@@ -12,9 +12,9 @@ public class OnibusEscolar {
         setProfessores(qntdProfessores);
     }
 
-    // Setter
+    // Setters
     public void setEstudantes(int qntdEstudantes) {
-        if (getAlunos() > 40) {
+        if (qntdEstudantes > 40) {
             qntdEstudantes = 40;
         }
 
@@ -30,7 +30,7 @@ public class OnibusEscolar {
 
     }
 
-    // Getter
+    // Getters
     public int getAlunos() {
         return qntdEstudantes;
     }
@@ -39,10 +39,12 @@ public class OnibusEscolar {
         return qntdProfessores;
     }
 
+    // Metodo removerAlunos
     public void removerAlunos(int removerAlunos){
         setEstudantes(getAlunos() - removerAlunos);
     }
 
+    // Sobrescrever metodo toString
     @Override
     public String toString() {
         return "OnibusEscolar{" +
