@@ -6,6 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/array-list/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/metodos/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/oop/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/relacionamento-objeto/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

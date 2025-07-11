@@ -1,7 +1,7 @@
 package exer_04;
 
-import java.sql.SQLOutput;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Exer04 {
@@ -9,21 +9,22 @@ public class Exer04 {
         Scanner sc = new Scanner(System.in);
 
         // Instancia a classe ArrayList
-        ArrayList<Integer> array =  new ArrayList<Integer>();
-        array.add(2);
-        array.add(6);
-        array.add(12);
-        array.add(9);
-        array.add(18);
-        array.add(20);
+        List<Integer> listaNumero =  new ArrayList<Integer>();
+        listaNumero.add(2);
+        listaNumero.add(6);
+        listaNumero.add(12);
+        listaNumero.add(9);
+        listaNumero.add(18);
+        listaNumero.add(20);
 
         int input = sc.nextInt();
 
-        for(int i = 0; i < array.size(); i++){
-            if (input == array.get(i)){
-                System.out.println("Número encontrado: [" + array.get(i) + "] no índice " + i + ".");
-                break;
-            }
+        int indice = listaNumero.indexOf(input);
+
+        if (indice != -1){
+            System.out.println("Valor encontrado no índice " + indice);
+        } else {
+            System.out.println("Elemento não está na lista");
         }
     }
 }

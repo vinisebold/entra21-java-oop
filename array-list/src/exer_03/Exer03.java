@@ -2,6 +2,7 @@ package exer_03;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
 public class Exer03 {
@@ -9,7 +10,7 @@ public class Exer03 {
         Scanner sc = new Scanner(System.in);
 
         // Instancia ArrayList
-        ArrayList<Integer> array = new ArrayList<Integer>();
+        List<Integer> listaElementos = new ArrayList<Integer>();
 
         // Variavel de input
         int input = 1;
@@ -22,20 +23,21 @@ public class Exer03 {
                 break;
             }
 
-            array.add(input);
+            listaElementos.add(input);
         }
 
-        System.out.println("Menor elemento: " + Collections.min(array));
-        System.out.println("Maior elemento: " + Collections.max(array));
-        System.out.println("Média: " + calcularMedia(array));
+        System.out.println("Menor elemento: " + Collections.min(listaElementos));
+        System.out.println("Maior elemento: " + Collections.max(listaElementos));
+        System.out.println("Média: " + calcularMedia(listaElementos));
+
     }
 
-    public static double calcularMedia(ArrayList<Integer>  array){
+    public static double calcularMedia(List<Integer> listaElementos){
         double soma = 0;
-        for (Integer integer : array) {
+        for (Integer integer : listaElementos) {
             soma += integer;
         }
 
-        return soma / array.size();
+        return soma / listaElementos.size();
     }
 }

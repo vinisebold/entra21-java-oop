@@ -1,28 +1,26 @@
 package exer_01;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.List;
 
 public class Exer01 {
     public static void main(String[] args) {
 
         // Cria um objeto ArrayList
-        ArrayList<Integer> array = new ArrayList<Integer>();
+        List<Integer> listaNumeros = new ArrayList<>();
 
         // Adiciona 5 elementos no ArrayList
-        array.add(9);
-        array.add(55);
-        array.add(32);
-        array.add(91);
-        array.add(12);
+        listaNumeros.add(9);
+        listaNumeros.add(32);
+        listaNumeros.add(91);
+        listaNumeros.add(12);
+        listaNumeros.add(55);
 
         // Ordena o ArrayList
-        Collections.sort(array);
+        listaNumeros.sort(null);
 
         // Output
-        for (Integer integer : array) {
-            System.out.println(integer);
-        }
+        System.out.println(listaNumeros);
 
     }
 

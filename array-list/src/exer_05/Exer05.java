@@ -1,10 +1,14 @@
 package exer_05;
 
-import java.util.ArrayList;
-import java.util.Scanner;
-
 public class Exer05 {
     public static void main(String[] args) {
-        int i = 0;
+
+        Tarefa t1 = new Tarefa("Estudar");
+        Tarefa t2 = new Tarefa("Ler");
+        Tarefa t3 = new Tarefa("Escola");
+        Tarefa t4 = new Tarefa("Almoçar");
+
+        ListaTarefas s1 = new ListaTarefas();
+
     }
 }
