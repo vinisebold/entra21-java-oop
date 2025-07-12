@@ -10,5 +10,7 @@ O [Entra21](https://www.entra21.com.br/) é um programa de formação em tecnolo
 
 Súmario:
 
-* `src/introducao`: Códigos/exemplos referentes ao conceito introdutório de Programação Orientada a Objetos.
-* `src/exercicios`: Agrupa os exercícios práticos criados para aplicar e fixar os conceitos estudados.
+* `array-list\src`
+* `metodos\src`
+* `oop\src`
+* `relacionamento-objeto\src`
