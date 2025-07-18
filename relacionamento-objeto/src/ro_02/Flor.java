@@ -45,5 +45,8 @@ public class Flor {
         this.presente = presente;
     }
 
-
+    @Override
+    public String toString() {
+        return "nome=" + nome + ", preco=" + preco + ", nomeCliente=" + nomeCliente + ", presente=" + presente;
+    }
 }

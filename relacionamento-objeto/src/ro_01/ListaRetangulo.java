@@ -6,6 +6,7 @@ import java.util.List;
 public class ListaRetangulo {
     private List<Retangulo> listaRetangulo;
 
+
     // Construtor
     public ListaRetangulo() {
         listaRetangulo = new ArrayList<>();

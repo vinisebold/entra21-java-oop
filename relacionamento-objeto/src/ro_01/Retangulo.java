@@ -14,6 +14,7 @@ public class Retangulo {
     }
 
     public void setAltura(double altura) {
+        if (altura < 0) throw new IllegalArgumentException("Altura inválida");
         this.altura = altura;
     }
 
@@ -22,6 +23,7 @@ public class Retangulo {
     }
 
     public void setLargura(double largura) {
+        if (largura < 0) throw new IllegalArgumentException("Largura inválida");
         this.largura = largura;
     }
 

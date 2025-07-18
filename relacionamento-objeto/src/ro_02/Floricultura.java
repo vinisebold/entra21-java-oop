@@ -4,17 +4,44 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Floricultura {
-    List<Flor> listaFlores;
+    private List<Flor> listaFlores;
 
-    public Floricultura(){
+    public Floricultura() {
         listaFlores = new ArrayList<>();
     }
 
-    public void adicionarFlores(Flor f){
+    public void adicionarFlores(Flor f) {
         listaFlores.add(f);
     }
-    
-    public double florMaisCara(Flor f){
-        return 0;
+
+    public Flor florMaisCara() {
+        double maisCaro = Double.MIN_EXPONENT;
+        Flor florMaisCara = null;
+
+        for (Flor f : listaFlores) {
+            if (f.getPreco() > maisCaro) {
+                maisCaro = f.getPreco();
+                florMaisCara = f;
+            }
+        }
+
+
+        return florMaisCara;
+    }
+
+    public boolean isReceitaMaiorComPresente() {
+
+        double somaPresente = 0;
+        double somaNaoPresente = 0;
+
+        for (Flor f : listaFlores) {
+            if (f.isPresente()) {
+                somaPresente += f.getPreco();
+            } else {
+            somaNaoPresente += f.getPreco();
+            }
+        }
+
+        return somaPresente > somaNaoPresente;
     }
 }
