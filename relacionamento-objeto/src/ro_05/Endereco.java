@@ -16,6 +16,7 @@ public class Endereco {
     }
 
     public void setLogradouro(String logradouro) {
+        if (logradouro.isBlank()) throw new IllegalArgumentException("Logradouro inválido");
         this.logradouro = logradouro;
     }
 
@@ -24,6 +25,7 @@ public class Endereco {
     }
 
     public void setComplemento(String complemento) {
+        if (complemento.isBlank()) throw new IllegalArgumentException("Complemento inválido");
         this.complemento = complemento;
     }
 
@@ -32,6 +34,7 @@ public class Endereco {
     }
 
     public void setNumero(int numero) {
+        if (numero < 0) throw new IllegalArgumentException("Numero inválido");
         this.numero = numero;
     }
 

@@ -45,12 +45,15 @@ public class Vereador {
     }
 
     public void setQntdProjetosAprovados(int qntdProjetosAprovados) {
-        if (qntdProjetosAprovados < 0) throw new IllegalArgumentException("Numero invalido");
+        if (qntdProjetosAprovados < 0 || qntdProjetosAprovados > qntdProjetosApresentados) throw new IllegalArgumentException("Numero invalido");
         this.qntdProjetosAprovados = qntdProjetosAprovados;
     }
 
     private double obterIndiceTrabalho() {
-        if (qntdProjetosApresentados <= 5) {
+
+        if (qntdProjetosApresentados == 0) {
+            return 0;
+        } else if (qntdProjetosApresentados <= 5) {
             return 0.80;
         } else if (qntdProjetosApresentados <= 10) {
             return 1.00;
@@ -60,7 +63,12 @@ public class Vereador {
         return 1.22;
     }
 
-    public double obterDesempenho(){
+    public double obterDesempenho() {
         return ((double) qntdProjetosAprovados / qntdProjetosApresentados) * obterIndiceTrabalho();
+    }
+
+    @Override
+    public String toString() {
+        return nome + ", " + partido + ", " + qntdProjetosApresentados + ", " + qntdProjetosAprovados;
     }
 }
