@@ -14,8 +14,8 @@ public class Floricultura {
         listaFlores.add(f);
     }
 
-    public Flor florMaisCara() {
-        double maisCaro = Double.MIN_EXPONENT;
+    public Flor obterFlorMaisCara() {
+        double maisCaro = Double.NEGATIVE_INFINITY;
         Flor florMaisCara = null;
 
         for (Flor f : listaFlores) {
@@ -30,18 +30,17 @@ public class Floricultura {
     }
 
     public boolean isReceitaMaiorComPresente() {
-
-        double somaPresente = 0;
-        double somaNaoPresente = 0;
+        double receitaPresente = 0;
+        double receitaNaoPresente = 0;
 
         for (Flor f : listaFlores) {
             if (f.isPresente()) {
-                somaPresente += f.getPreco();
+                receitaPresente += f.getPreco();
             } else {
-            somaNaoPresente += f.getPreco();
+            receitaNaoPresente += f.getPreco();
             }
         }
 
-        return somaPresente > somaNaoPresente;
+        return receitaPresente > receitaNaoPresente;
     }
 }

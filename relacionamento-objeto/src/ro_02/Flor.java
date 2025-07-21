@@ -18,6 +18,7 @@ public class Flor {
     }
 
     public void setNome(String nome) {
+        if (nome == null || nome.isBlank()) throw new IllegalArgumentException("Nome da flor inválida");
         this.nome = nome;
     }
 
@@ -26,6 +27,7 @@ public class Flor {
     }
 
     public void setPreco(double preco) {
+        if (preco <= 0) throw new IllegalArgumentException("Preço inválido");
         this.preco = preco;
     }
 
@@ -34,6 +36,7 @@ public class Flor {
     }
 
     public void setNomeCliente(String nomeCliente) {
+        if (nomeCliente == null || nomeCliente.isBlank()) throw new IllegalArgumentException("Nome do cliente inválido");
         this.nomeCliente = nomeCliente;
     }
 
@@ -47,6 +50,6 @@ public class Flor {
 
     @Override
     public String toString() {
-        return "nome=" + nome + ", preco=" + preco + ", nomeCliente=" + nomeCliente + ", presente=" + presente;
+        return "nome=" + nome + ", preco=" + preco + ", nomeCliente=" + nomeCliente + (presente ? ", a flor foi para presente" : ", a flor nao foi para presente");
     }
 }

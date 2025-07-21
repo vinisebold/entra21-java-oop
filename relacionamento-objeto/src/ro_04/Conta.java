@@ -14,6 +14,7 @@ public class Conta {
     }
 
     public void setNomeTitular(String nomeTitular) {
+        if (nomeTitular.isBlank()) throw new IllegalArgumentException("Nome invalido");
         this.nomeTitular = nomeTitular;
     }
 
@@ -22,20 +23,24 @@ public class Conta {
     }
 
     public void setSaldo(double saldo) {
+        if (saldo < 0) throw new IllegalArgumentException("Valor invalido");
         this.saldo = saldo;
     }
 
     public void sacarDinheiro(double valor){
+        if (valor > saldo || valor <= 0) throw new IllegalArgumentException("Valor invalido");
         saldo -= valor;
     }
 
     public void depositarDinheiro(double valor){
+        if (valor <= 0) throw new IllegalArgumentException("Valor Invalido");
         saldo += valor;
     }
 
     public void transferirDinheiro(Conta pConta, double valor){
-        pConta.saldo += valor;
+        if (valor > saldo || valor <= 0) throw new IllegalArgumentException("Valor invalido");
         saldo -= valor;
+        pConta.saldo += valor;
     }
 
     @Override

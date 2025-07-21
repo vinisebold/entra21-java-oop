@@ -14,8 +14,8 @@ public class App {
         listaFlores.adicionarFlores(f3);
         listaFlores.adicionarFlores(f4);
 
-        listaFlores.florMaisCara();
-        System.out.println("Flor mais cara: "+listaFlores.florMaisCara());
+        listaFlores.obterFlorMaisCara();
+        System.out.println("Flor mais cara: "+listaFlores.obterFlorMaisCara());
         System.out.println(listaFlores.isReceitaMaiorComPresente() ? "Maior receita com presente" : "Maior receita não foi para presente");
 
 
