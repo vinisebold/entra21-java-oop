@@ -24,6 +24,8 @@ public class Pessoa {
     }
 
     public void setDataNascimento(LocalDate dataNascimento) {
+        if (dataNascimento.isAfter(LocalDate.now())) throw new IllegalArgumentException("Data inválida");
         this.dataNascimento = dataNascimento;
     }
+
 }
