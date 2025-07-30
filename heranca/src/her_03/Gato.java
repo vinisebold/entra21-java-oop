@@ -17,7 +17,8 @@ public class Gato extends  Animal{
         this.cadastro = cadastro;
     }
 
-    public void som(){
-        System.out.println(getEspecie() + ": Miauu");
+    @Override
+    public String emitirSom() {
+        return "Miau";
     }
 }

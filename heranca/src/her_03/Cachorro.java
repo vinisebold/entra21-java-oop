@@ -16,7 +16,9 @@ public class Cachorro extends Animal{
         this.raca = raca;
     }
 
-    public void som(){
-        System.out.println(getEspecie() + ": Auau");
+
+    @Override
+    public String emitirSom() {
+        return "AuAu";
     }
 }

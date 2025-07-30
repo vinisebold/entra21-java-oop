@@ -1,6 +1,6 @@
 package her_03;
 
-abstract class Animal {
+public abstract class Animal {
 
     private String especie;
     private boolean estimacao;
@@ -36,5 +36,5 @@ abstract class Animal {
         this.peso = peso;
     }
 
-    public abstract void som();
+    public abstract String emitirSom();
 }

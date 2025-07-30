@@ -20,6 +20,7 @@ public class Notebook extends Computador {
         setRam(getRam() + valor);
     }
 
+    @Override
     public boolean rodarAplicacao(String valor) {
         return valor.contains(".exe");
     }

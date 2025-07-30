@@ -35,6 +35,7 @@ public class Smartphone extends Computador {
         return operadoraString.charAt(0) == valor;
     }
 
+    @Override
     public boolean rodarAplicacao(String valor) {
         return valor.contains(".apk");
     }
